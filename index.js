@@ -17,7 +17,7 @@ module.exports = function compress_html(_data) {
       data.minifyJS = _data.js;
     }
     if(isBoolean(_data.css)){
-      data.minifyCSS = _data.js;
+      data.minifyCSS = _data.css;
     }
     if(isBoolean(_data.comments)){
       data.minifyCSS = _data.comments;
