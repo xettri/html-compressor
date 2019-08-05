@@ -1,0 +1,34 @@
+{
+  "name": "html-compressor",
+  "version": "0.0.1",
+  "description": "Html-compressor",
+  "main": "index.js",
+  "contributors": [
+    "bcrazydreamer <bcrazydreamer@gmail.com>"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "MIT",
+  "repository": "nepsho/html-compressor",
+  "bugs": {
+    "url": "https://github.com/nepsho/html-compressor/issues"
+  },
+  "author": "bcrazydreamer <bcrazydreamer@gmail.com>",
+  "homepage": "https://nepsho.github.io/",
+  "keywords": [
+    "html-compressor",
+    "minify",
+    "html-minify",
+    "compressor"
+  ],
+  "files": [
+    "LICENSE",
+    "README.md",
+    "index.js",
+    "lib/"
+  ],
+  "dependencies": {
+    "html-minifier": "^4.0.0"
+  }
+}
