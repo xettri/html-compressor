@@ -45,13 +45,14 @@ app.use(htmlCompressor(<options>));
 - collapse Boolean attribute
 
 These default options are able to minify the html content but for css and js we can pass the option for that.
-| Option | type | default | description
+
+| Option | type | default | description|
 |--|--|--|--|
-| css | Boolean | false | To minify css of html
-| js | Boolean | false | To minify js of html
-| comments | Boolean | true | To remove comments from html
-| render | Boolean | true | It will modify default response.render function for all
-| custom | String | null | It will use to create the custom render function 
+| css | Boolean | false | To minify css of html|
+| js | Boolean | false | To minify js of html|
+| comments | Boolean | true | To remove comments from html|
+| render | Boolean | true | It will modify default response.render function for all|
+| custom | String | null | It will use to create the custom render function |
 
 **Default Compress Function (renderCompress)>>**
 renderCompress is default compress function we can use response.renderCompress to render compress html
