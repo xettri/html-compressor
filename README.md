@@ -1,8 +1,4 @@
-
 # html-compressor
-
-  
-
 [![npm version](https://img.shields.io/npm/v/html-compressor.svg?style=flat-square)](https://www.npmjs.org/package/html-compressor)
 
 [![npm license](https://img.shields.io/static/v1.svg?label=License&message=MIT&color=informational)](https://github.com/nepsho/html-compressor/blob/master/LICENSE)
@@ -49,7 +45,7 @@ app.use(htmlCompressor(<options>));
 - collapse Boolean attribute
 
 These default options are able to minify the html content but for css and js we can pass the option for that.
-| Option | type | default | |
+| Option | type | default | description
 |--|--|--|--|
 | css | Boolean | false | To minify css of html
 | js | Boolean | false | To minify js of html
