@@ -1,5 +1,4 @@
 # html-compressor
-[![npm version](https://img.shields.io/npm/v/html-compressor.svg?style=flat-square)](https://www.npmjs.org/package/html-compressor)
 [![npm license](https://img.shields.io/static/v1.svg?label=License&message=MIT&color=informational)](https://github.com/nepsho/html-compressor/blob/master/LICENSE)
 [![npm repository](https://img.shields.io/static/v1.svg?label=Repository&message=GitHub&color=yellow)](https://github.com/nepsho/html-compressor)
 [![npm author](https://img.shields.io/static/v1.svg?label=Author&message=bcrazydreamer&color=success)](https://www.npmjs.com/~bcrazydreamer)
@@ -50,6 +49,7 @@ These default options are able to minify the html content but for css and js we 
 | comments | Boolean | true | To remove comments from html|
 | render | Boolean | true | It will modify default response.render function for all|
 | custom | String | null | It will use to create the custom render function |
+| debug | Boolean | false | If true then it will show message when unable to minify html because of error |
 
 **Default Compress Function (renderCompress)>>**
 renderCompress is default compress function we can use response.renderCompress to render compress html
