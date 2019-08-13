@@ -8,6 +8,7 @@ const isFunction = function(variable) {return Object.prototype.toString.call(var
 /*-----------------*/
 
 const errorMsgHead = '\u001B[38;2;255;0;0mhtml-compressor\u001B[39m-';
+const syntaxError = 'Unable to compress html make sure html syntax is correct';
 
 const optionFilter = function(_data){
   var _payload = {
@@ -34,7 +35,7 @@ const optionFilter = function(_data){
   return _payload;
 }
 
-const compressor = function(req, res, next, data, isRenderModify,customRender){
+const compressor = function(req, res, next, data, isRenderModify,customRender,_debug){
   var sendCompressHtml = function (cb) {
     if(isFunction(cb)) {
       return function (err, html) {
@@ -45,7 +46,9 @@ const compressor = function(req, res, next, data, isRenderModify,customRender){
           try{
             html = minify(html, data);
           } catch(err){
-            console.log(errorMsgHead+'Unable to compress html');
+            if(_debug){
+              console.log(errorMsgHead+syntaxError);
+            }
           }
         }
         return cb(err, html);
@@ -58,7 +61,9 @@ const compressor = function(req, res, next, data, isRenderModify,customRender){
         try{
           html = minify(html, data);
         } catch(err){
-          console.log(errorMsgHead+'Unable to compress html');
+          if(_debug){
+            console.log(errorMsgHead+syntaxError);
+          }
         }
         return res.send(html);
       }
@@ -83,6 +88,10 @@ const compressor = function(req, res, next, data, isRenderModify,customRender){
 
 /* compress engine */
 module.exports = function(_data){
+  var _debug = false;
+  if(_data && _data.debug === true && _data.debug === "true"){
+    _debug = true;
+  }
   var data = optionFilter(_data);
   var isRenderModify = isBoolean(_data.render) ? _data.render : true;
   var customRender = (
@@ -93,7 +102,7 @@ module.exports = function(_data){
   return function(req, res, next){
     return compressor(
       req, res, next,
-      data,isRenderModify,customRender
+      data,isRenderModify,customRender,_debug
     );
   }
 }
