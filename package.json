@@ -1,6 +1,6 @@
 {
   "name": "html-compressor",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "description": "Html-compressor",
   "main": "index.js",
   "contributors": [

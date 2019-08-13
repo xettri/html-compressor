@@ -89,7 +89,7 @@ const compressor = function(req, res, next, data, isRenderModify,customRender,_d
 /* compress engine */
 module.exports = function(_data){
   var _debug = false;
-  if(_data && _data.debug === true && _data.debug === "true"){
+  if(_data && (_data.debug === true || _data.debug === "true")){
     _debug = true;
   }
   var data = optionFilter(_data);
