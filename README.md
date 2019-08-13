@@ -49,7 +49,7 @@ These default options are able to minify the html content but for css and js we 
 | comments | Boolean | true | To remove comments from html|
 | render | Boolean | true | It will modify default response.render function for all|
 | custom | String | null | It will use to create the custom render function |
-| debug | Boolean | false | If true then it will show message when unable to minify html because of error |
+| debug | Boolean | false | If true, then it will show the message when unable to minify html due to error |
 
 **Default Compress Function (renderCompress)>>**
 renderCompress is default compress function we can use response.renderCompress to render compress html
