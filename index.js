@@ -40,7 +40,7 @@ const compressor = function(req, res, next, data, isRenderModify,customRender,_d
     if(isFunction(cb)) {
       return function (err, html) {
         if (err) {
-          return next(err);
+          return cb(err);
         }
         if (html) {
           try{
