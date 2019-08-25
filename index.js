@@ -86,6 +86,17 @@ const compressor = function(req, res, next, data, isRenderModify,customRender,_d
   return next();
 }
 
+const utility = function(res){
+  res.sendHtml = function(_d){
+    this.writeHead(200, {'Content-Type': 'text/html'});
+    this.end(_d);
+  }
+  res.sendJSON = function(_d){
+    res.setHeader('Content-Type', 'application/json');
+    this.end(_d);
+  }
+}
+
 /* compress engine */
 module.exports = function(_data){
   var _debug = false;
@@ -100,10 +111,11 @@ module.exports = function(_data){
   ) ? _data.custom : null;
 
   return function(req, res, next){
-    return compressor(
+    compressor(
       req, res, next,
       data,isRenderModify,customRender,_debug
     );
+    utility(res);
   }
 }
 /*-----------------*/
